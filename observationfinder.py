@@ -41,7 +41,7 @@ def get_observations(lat, long):
             before = val[i]["properties"]["startTime"]
             after = val[i + 1]["properties"]["startTime"]
             print("  compare", before, "and", after)
-        return
+    return groups
 
 
 groups = get_observations(24.85837627940547, 55.71343188471354)
