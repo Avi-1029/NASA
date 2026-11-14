@@ -1,6 +1,11 @@
 import requests
 
-def get_observations(west, south, east, north):
+
+def get_observations(lat, long):
+    west  = long - 0.1
+    east  = long + 0.1
+    south = lat - 0.1
+    north = lat + 0.1
     url = "https://api.daac.asf.alaska.edu/services/search/param"
     polygon = f"POLYGON(({west} {south}, {east} {south}, {east} {north}, {west} {north}, {west} {south}))"
     params = {
@@ -38,4 +43,5 @@ def get_observations(west, south, east, north):
             print("  compare", before, "and", after)
         return
 
-groups = get_observations(-55.6, -7.3, -55.4, -7.1)
+
+groups = get_observations(24.85837627940547, 55.71343188471354)
