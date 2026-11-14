@@ -1,10 +1,4 @@
-import h5py
-import numpy as np
-import matplotlib.pyplot as plt
-from pyproj import Transformer
 import requests
-
-
 
 def get_observations(west, south, east, north):
     url = "https://api.daac.asf.alaska.edu/services/search/param"
